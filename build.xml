@@ -62,10 +62,10 @@
 
 	<target name="build" depends="init">
 		<echo message="building cascading.json JAR..."/>
-		<javac srcdir="${src.java}" destdir="${build.classes}" verbose="off" debug="${javac.debug}">
+		<javac srcdir="${src.java}" destdir="${build.classes}" verbose="on" debug="${javac.debug}">
 			<classpath refid="project.class.path"/>
 		</javac>
-
+		<mkdir dir="${jars.dir}"/>
 		<jar jarfile="${jars.dir}/${ant.project.name}-${cascading.json.release.version}.jar">
 			<fileset dir="${build.classes}"/>
 		</jar>
